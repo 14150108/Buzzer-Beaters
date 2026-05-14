@@ -149,11 +149,18 @@
 	background: #4f46e5;
 }
 
-.q-header {
+.q-nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: rgba(255,255,255,0.95);
+	backdrop-filter: blur(4px);
+	border-bottom: 1px solid #e0e7ff;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 1.25rem;
+	padding: 10px 1.25rem;
+	margin: 0 -1.25rem 1rem;
 }
 
 .q-back {
@@ -270,12 +277,18 @@
 }
 
 .stats-bar {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 8px;
-	border-top: 1.5px solid #e0e7ff;
-	padding-top: 1rem;
-	margin-top: 0.5rem;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(10px);
+	border-top: 1px solid #e0e7ff;
+	padding: 10px 12px;
+	z-index: 999;
 }
 
 .stat-card {
@@ -284,6 +297,9 @@
 	padding: 0.75rem;
 	text-align: center;
 	border: 1px solid #e0e7ff;
+    background: transparent;
+	border: none;
+	padding: 0;
 }
 
 .stat-label {
@@ -293,6 +309,7 @@
 	font-weight: 500;
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
+    opacity: 0.7;
 }
 
 .stat-value {
