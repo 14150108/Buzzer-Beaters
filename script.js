@@ -52,7 +52,7 @@ async function loadAndShow(){
     catch(e){
       if(e.message==='ratelimit'){
         document.getElementById('quiz-body').innerHTML='<div class="loading">Rate limited — retrying…</div>';
-        await wait(1000);
+        await wait(500);
         return loadAndShow();
       }
       document.getElementById('quiz-body').innerHTML='<div class="loading" style="color:#dc2626">Could not load questions.</div>';
@@ -116,7 +116,7 @@ async function loadMoreReader(){
   readerLoading=true;
   document.getElementById('reader-loading').style.display='block';
   try{
-    if(readerCount>0) await wait(1000);
+    if(readerCount>0) await wait(500);
     const batch=await fetchQ(50);
     const list=document.getElementById('reader-list');
     batch.forEach(q=>{
@@ -135,7 +135,7 @@ async function loadMoreReader(){
   }catch(e){
     if(e.message==='ratelimit'){
       document.getElementById('reader-list').insertAdjacentHTML('beforeend','<div class="retry-msg">⏳ Rate limited — waiting 5s then retrying…</div>');
-      await wait(1000);
+      await wait(500);
       document.querySelector('.retry-msg')?.remove();
       readerLoading=false;
       return loadMoreReader();
