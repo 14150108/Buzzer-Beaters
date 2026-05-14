@@ -127,7 +127,7 @@ async function loadMoreReader(){
       card.innerHTML=`
         <div class="cat-tag ${diffClass(q.difficulty)}">${dec(q.category)} <span class="diff-pill">${q.difficulty}</span></div>
         <div class="reader-q">${readerCount}. ${dec(q.question)}</div>
-        <div class="reader-answer">✓ ${correctDec}</div>
+        <div class="reader-answer">${correctDec}</div>
       `;
       list.appendChild(card);
     });
