@@ -116,8 +116,8 @@ async function loadMoreReader(){
   readerLoading=true;
   document.getElementById('reader-loading').style.display='block';
   try{
-    if(readerCount>0) await wait(5500);
-    const batch=await fetchQ(20);
+    if(readerCount>0) await wait(500);
+    const batch=await fetchQ(50);
     const list=document.getElementById('reader-list');
     batch.forEach(q=>{
       readerCount++;
